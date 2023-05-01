@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "eaa24dd9-9226-4516-91cb-e23f53a1f0e2",
+		"name": "SSO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8514640",
+		"_collection_link": "https://galactic-crater-5782.postman.co/workspace/soniflores-api~4c45536b-1a06-4eeb-9c92-7408c7645e17/collection/8514640-eaa24dd9-9226-4516-91cb-e23f53a1f0e2?action=share&creator=8514640&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/auth?username=YOUR_USER@maddytecoutlook.onmicrosoft.com&password=YOUR_PASSWORD",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "YOUR_USER@maddytecoutlook.onmicrosoft.com"
+						},
+						{
+							"key": "password",
+							"value": "YOUR_PASSWORD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth-microsoft",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "YOUR_CLIENT",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "YOUR_SECRET",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "YOUR_USERNAME",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "YOUR_PASSWORD",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "User.Read",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/c42ace83-986f-40e3-b088-c7c54eb9b110/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"c42ace83-986f-40e3-b088-c7c54eb9b110",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
